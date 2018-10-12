@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="top-buffer">    
+    <div class="mx-auto" style="width: 300px;">
+        <div class="col-sm-20 text-center">
+        <img class="img-fluid" alt="Responsive image" height="90" width="90" src="https://www.kaspersky.com.br/content/pt-br/images/b2c/ksec/product-icon-KSC.png" >
+        <h1>CriptoMail</h1>
+        <div style="margin-top:20px;">
+        <form action="login" method="POST" class="form-signin">
+                
+                <label class="container-fluid">Nome de usuário:</label>
+
+                <input required {% if error %}style="border-color: red;" placeholder="Nome Incorreto"{% endif %} "type="text" {% if name %} value={{name}} {% endif %} name="UserName" class="form-control" ><br>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+                <button type="submit" name="submit" value="b1" class="btn btn-success">Login</button>
+                </div>
+                
+        </form>
+     </div>   
+    </div>
+    </div>
+    </div>
+
+
+
+
+{% endblock %} 

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<center>
+  {% if msm%}
+  <h1>você tem uma nova mensagem de {{remetente}}</h1><br>
+  <button onclick="location.href = '/ler';" class="btn btn-success">Clique aqui e veja</button>
+  
+  {%else%}
+
+  <h1>Escreva uma mensagem</h1>
+  <form method="POST" action="/send">
+    <h3>Enviar para</h3>
+    {%if user == 'Bolsonaro'%}
+    <select name="Destinatário">
+      <option value='Haddad'>Haddad</option><br>
+    </select>
+    {%else%}
+    <select name="Destinatário">
+      <option value='Bolsonaro'>Bolsonaro</option><br>
+    </select>
+    {%endif%}
+
+    <br>
+    <br>
+
+    <textarea required name="message" rows="10" cols="70"></textarea><br>
+    <button type="submit" class="btn btn-success">Enviar</button>
+  </form>
+
+  {% endif %}
+
+</center>
+
+{% endblock %} 
